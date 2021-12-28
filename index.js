@@ -5,7 +5,7 @@ const token = '5021210314:AAGsgdeK5tXqNG6iJ43XXeFkyF-OyV5pQS8'
 const bot = new TelegramBot(token, { polling: true })
 
 bot.onText(/\/start/, (msg, match) => {
-    bot.sendMessage(msg.chat.id, 'Привет, этот бот поможет тебе зароллить качетвенную игру\n Leshhh, goooo!!!');
+    bot.sendMessage(msg.chat.id, 'Привет, этот бот поможет тебе зароллить качеcтвенную игру\n Leshhh, goooo!!!');
 });
 
 bot.onText(/\/help/, (msg, match) => {
@@ -13,13 +13,13 @@ bot.onText(/\/help/, (msg, match) => {
         'где M - количество костей при броске, d - буква, обозначающая кость, N - количество граней кости, K - дополнительные коэффиценты, ' +
         'если они у вас есть, конечно же\n Если M = 1, то единицу можно не указывать\n' +
         'Строка 4d6 будет интерпретирована как 4 кости с 6-ю гранями, то есть 4 обычных игральных куба\n' +
-        'Заролль как надо, дружище, не используй бумагу ');
+        );
 })
 
-/*^(\d{0,2}\s?[Dd]\s?\d{1,3}\s?[+-]?)+[+-]?\s?(\d+)?$*/
+
 
 bot.onText(/^[^\/].+/, (msg, match) => {
-    //const regexp = /^(\d{0,2}\s?[Dd]\s?\d{1,3}\s?[+-]?)+\b[+-]?\s?(\d+)?$/g;
+
     const regexpDice = /\b\s?\d{0,3}[dD]\d{1,3}\s?\b/g;
     const regexpNumberConst = /[+-]\s?\d+\b/g;
     const regexpMathSigns = /\b[+-]\b/g;
